@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-white font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-pill {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg;
+  }
+  
+  .bento-card {
+    @apply bg-card-bg rounded-[2rem] border border-white/5 p-8 relative overflow-hidden transition-[border-color,box-shadow] duration-300;
+  }
+  
+  .bento-card:hover {
+    border-color: rgba(107, 33, 168, 0.4);
+    box-shadow: 0 0 30px rgba(107, 33, 168, 0.15);
+  }
+}
+
+/* Custom ambient background glow */
+.ambient-glow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  background: radial-gradient(circle, rgba(107,33,168,0.15) 0%, rgba(6,6,8,0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
